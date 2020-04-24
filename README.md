@@ -26,13 +26,30 @@ The objective of this tutorial is to learn about asynchronous programming in Dar
 [Geolocator](https://pub.dev/packages/geolocator)
 
 The geolocator package from pub.dev gets the location of the user using the
-`getCurrentPosition` method. I also added a request note that asked the
-permission to get the user's position.
+`getCurrentPosition` method.
+
+The first step is to add geolocator to the `pubspec.yaml` file as a dependency.
+
+```yaml
+dependencies:
+  geolocator: ^5.3.1
+```
+
+Next, I imported geolocator at the top of my file.
+
+```
+import 'package:geolocator/geolocator.dart';
+```
+
+To get the location, I used the `getCurrentPosition` method with a low accuracy.
 
 ```dart
 void getLocation() async {
     Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
 ```
+
+I also added a request note that asked the
+permission to get the user's position.
 
 ### Request Note for iOS
 
