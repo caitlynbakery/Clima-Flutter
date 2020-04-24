@@ -21,4 +21,36 @@ The objective of this tutorial is to learn about asynchronous programming in Dar
 - How to use the Geolocator package to get live location data for both iOS and Android.
 - How to use the TextField Widget to take user input.
 
+## GeoLocator
 
+[Geolocator](https://pub.dev/packages/geolocator)
+
+The geolocator package from pub.dev gets the location of the user using the
+`getCurrentPosition` method. I also added a request note that asked the
+permission to get the user's position.
+
+```dart
+void getLocation() async {
+    Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
+```
+
+### Request Note for iOS
+
+The file to place the request is called `Info.plist`.
+
+Location: ios/Runner/Info.plist
+
+```
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app needs access to location when open.</string>
+```
+
+### Request Note for Android
+
+The file to place the request is called `AndroidManifest.xml`.
+
+Location: android/app/src/main/AndroidManifest.xml
+
+```
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+```
