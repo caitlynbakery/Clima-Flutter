@@ -21,7 +21,7 @@ The objective of this tutorial is to learn about asynchronous programming in Dar
 - How to use the Geolocator package to get live location data for both iOS and Android.
 - How to use the TextField Widget to take user input.
 
-## GeoLocator
+## GeoLocator 📍
 
 [Geolocator](https://pub.dev/packages/geolocator)
 
