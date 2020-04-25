@@ -71,3 +71,45 @@ Location: android/app/src/main/AndroidManifest.xml
 ```
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 ```
+
+## Async Programming
+
+Async programming is when multiple requests are sent out and the user doesn't have to wait for the result to occur before moving on. For example, a multiple requests could be running at the same time and the results don't have to appear chronologically.
+
+```
+Future<String> task2() async {
+  Duration threeSeconds = Duration(seconds: 3);
+  String result;
+ 
+  await Future.delayed(threeSeconds, () {
+    result = 'task 2 data';
+  });
+
+  return result;
+
+}
+```
+
+## Sync Programming
+
+Synchronous programming is when the result of a request has to be finished
+BEFORE moving on to the next request. Sync programming is useful when the user has to get the result of one function and input it in another function.
+
+```
+void task3(String task2Data) {
+  String result = 'task 3 data';
+  print('Task 3 complete $task2Data');
+}
+```
+
+## Await
+
+Await is used in async programming when the user needs to wait for a result to appear before moving on in the code.
+
+```
+await Future.delayed(threeSeconds, () {
+    result = 'task 2 data';
+    print('Task 2 complete');
+  });
+  
+  ```
