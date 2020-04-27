@@ -112,4 +112,61 @@ await Future.delayed(threeSeconds, () {
     print('Task 2 complete');
   });
   
-  ```
+```
+
+## Widget Life Cycle
+
+Widget lifecycle is how a widget is created, runs and then destroyed.
+
+### initState
+
+This method is called when the stateful widget is created and is the first step of the lifecycle.
+
+### build
+
+The second step is the build method which builds a new widget every time the stateful widget is changed.
+
+### deactivate
+
+Lastly, the deactivate method calls for the destruction of the widget.
+
+## Exception Handling
+
+Exception handling is made of 3 components that check to see if there is an
+exception and how to deal with it.
+
+### Try
+
+The try component checks if a piece of code will have an exception at the
+time the code runs. It's similar to an if statement.
+
+```dart
+try {
+    double myStringAsDouble = double.parse(myString);
+    print(myStringAsDouble);
+  }
+```
+### Catch
+
+The catch component runs if the try component finds an exception. The code
+defaults to the catch if there is an error.
+
+```dart
+catch (e) {
+    print(e);
+  }
+```
+
+### Throw
+
+Lastly, the throw component ensures that the code will produce an exception(error)
+ if the user performs an illegal operation.
+
+```dart
+if (i < 10) {
+  throw {
+    print('i cannot be less than 10');
+  }
+}
+```
+
