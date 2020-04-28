@@ -72,7 +72,7 @@ Location: android/app/src/main/AndroidManifest.xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 ```
 
-## Async Programming
+## Async Programming 🕒
 
 Async programming is when multiple requests are sent out and the user doesn't have to wait for the result to occur before moving on. For example, a multiple requests could be running at the same time and the results don't have to appear chronologically.
 
@@ -106,7 +106,7 @@ void task3(String task2Data) {
 }
 ```
 
-## Await
+## Await ✋
 
 Await is used in async programming when the user needs to wait for a result to appear before moving on in the code.
 
@@ -118,7 +118,7 @@ await Future.delayed(threeSeconds, () {
   
 ```
 
-## Widget Life Cycle
+## Widget Life Cycle ♻️
 
 Widget lifecycle is how a widget is created, runs and then destroyed.
 
