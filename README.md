@@ -76,6 +76,10 @@ Location: android/app/src/main/AndroidManifest.xml
 
 Async programming is when multiple requests are sent out and the user doesn't have to wait for the result to occur before moving on. For example, a multiple requests could be running at the same time and the results don't have to appear chronologically.
 
+Future keyword is assigned to a variable that will exist in the future. At
+the moment of creation, it is empty like a receipt. Later, it is assigned
+to a value. The angle brackets represent the type of variable it will be.
+
 ```
 Future<String> task2() async {
   Duration threeSeconds = Duration(seconds: 3);
@@ -169,4 +173,11 @@ if (i < 10) {
   }
 }
 ```
+## Private Variables
 
+An underscore that starts the name of a variable indicates that it is a private
+variable.
+
+```dart
+_LoadingScreenState createState() => _LoadingScreenState();
+```
