@@ -196,3 +196,27 @@ variable.
 ```dart
 _LoadingScreenState createState() => _LoadingScreenState();
 ```
+---
+---
+
+# API
+
+API, or Application Programming Interface, is used to create own software
+or interact with external database. The RESTful API is a standard way of accessing data using HTTP requests. THe four main methods are GET, PUT, POST, and DELETE. In my Clima App, I used the [Open Weather API](https://openweathermap.org/current) and the GET request.
+
+For the Open Weather API I need to use a key so that I can access the
+information on their database. Here is a sample code of an API call.
+
+```
+https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=439d4b804bc8187953eb36d2a8c26a02
+```
+
+# http package
+
+The http package is a way to create requests and responses to the external server. For example, I created a `get` request and a `Response` variable using the http package.
+
+[Http Package](https://pub.dev/packages/http)
+
+```dart
+ http.Response response = await http.get('https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=439d4b804bc8187953eb36d2a8c26a02');
+```
