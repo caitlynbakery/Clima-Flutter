@@ -21,7 +21,10 @@ The objective of this tutorial is to learn about asynchronous programming in Dar
 - How to use the Geolocator package to get live location data for both iOS and Android.
 - How to use the TextField Widget to take user input.
 
-## GeoLocator 📍
+---
+---
+
+# GeoLocator 📍
 
 [Geolocator](https://pub.dev/packages/geolocator)
 
@@ -71,8 +74,10 @@ Location: android/app/src/main/AndroidManifest.xml
 ```
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 ```
+---
+---
 
-## Async Programming 🕒
+# Async Programming 🕒
 
 Async programming is when multiple requests are sent out and the user doesn't have to wait for the result to occur before moving on. For example, a multiple requests could be running at the same time and the results don't have to appear chronologically.
 
@@ -94,7 +99,7 @@ Future<String> task2() async {
 }
 ```
 
-## Sync Programming
+# Sync Programming
 
 Synchronous programming is when the result of a request has to be finished
 BEFORE moving on to the next request. Sync programming is useful when the user has to get the result of one function and input it in another function.
@@ -106,7 +111,7 @@ void task3(String task2Data) {
 }
 ```
 
-## Await ✋
+# Await ✋
 
 Await is used in async programming when the user needs to wait for a result to appear before moving on in the code.
 
@@ -118,7 +123,10 @@ await Future.delayed(threeSeconds, () {
   
 ```
 
-## Widget Life Cycle ♻️
+---
+---
+
+# Widget Life Cycle ♻️
 
 Widget lifecycle is how a widget is created, runs and then destroyed.
 
@@ -134,7 +142,10 @@ The second step is the build method which builds a new widget every time the sta
 
 Lastly, the deactivate method calls for the destruction of the widget.
 
-## Exception Handling
+---
+---
+
+# Exception Handling
 
 Exception handling is made of 3 components that check to see if there is an
 exception and how to deal with it.
@@ -173,7 +184,11 @@ if (i < 10) {
   }
 }
 ```
-## Private Variables
+
+---
+---
+
+# Private Variables
 
 An underscore that starts the name of a variable indicates that it is a private
 variable.
