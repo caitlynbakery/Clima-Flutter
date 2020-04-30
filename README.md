@@ -220,3 +220,15 @@ The http package is a way to create requests and responses to the external serve
 ```dart
  http.Response response = await http.get('https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=439d4b804bc8187953eb36d2a8c26a02');
 ```
+---
+---
+
+# jsonDecode
+
+jsonDecode can be used to decode json data and access certain key types.
+For instance, I accessed city name and temperature from the json data using jsonDecode.
+
+```dart
+var decodedData = jsonDecode(data);
+String city = decodedData['name'];
+```
