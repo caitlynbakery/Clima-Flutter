@@ -225,7 +225,8 @@ The http package is a way to create requests and responses to the external serve
 
 # jsonDecode
 
-jsonDecode can be used to decode json data and access certain key types.
+The OpenWeather data is in json format and to use the data types I need
+to convert it into dart format using jsonDecode. JsonDecode can be used to decode json data and access certain key types.
 For instance, I accessed city name and temperature from the json data using jsonDecode.
 
 ```dart
