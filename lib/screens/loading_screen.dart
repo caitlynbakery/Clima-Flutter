@@ -1,7 +1,11 @@
+import 'package:clima/services/networking.dart';
 import 'package:flutter/material.dart';
 import '../services/location.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+import '../services/networking.dart';
+import 'location_screen.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+
+const apiKey = '414dd026dd189e106e1d77920b3ac0f9';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -10,54 +14,44 @@ class LoadingScreen extends StatefulWidget {
 
 class _LoadingScreenState extends State<LoadingScreen> {
 
+  double latitude;
+  double longitude;
+
   @override
   void initState() {
     super.initState();
-    getLocation();
+    getLocationData();
 
   }
 
 
-  void getLocation() async {
+  void getLocationData() async {
     Location location = Location();
     await location.getCurrentLocation();
-    print(location.longitude);
-    print(location.latitude);
-  }
+    longitude = location.longitude;
+    latitude = location.latitude;
 
-  void getData() async {
+    NetworkHelper networkHelper = NetworkHelper('https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey');
 
-    //  Example of API call
-//
-//  api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=414dd026dd189e106e1d77920b3ac0f9
-//
-//  APPID
-//  414dd026dd189e106e1d77920b3ac0f9
+    var weatherData = await networkHelper.getData();
 
-    http.Response response = await http.get('https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=439d4b804bc8187953eb36d2a8c26a02');
+    Navigator.push(context, MaterialPageRoute(builder: (context){
+      return LocationScreen();
+    }));
 
-    if (response.statusCode == 200) {
-      String data = response.body;
-      
-      var decodedData = jsonDecode(data);
-
-      double temperature = decodedData['main']['temp'];
-      print(temperature);
-
-      int condition = decodedData['weather'][0]['id'];
-      print(condition);
-      
-      String city = decodedData['name'];
-      print(city);
-
-    } else {
-      print(response.statusCode);
-    }
   }
 
   @override
   Widget build(BuildContext context) {
-    getData();
-    return Scaffold();
+
+    return Scaffold(
+        body: Center(
+          child: SpinKitPumpingHeart(
+            color: Colors.white,
+            size: 100.0,
+          ),
+        )
+    );
+
   }
 }

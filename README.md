@@ -233,3 +233,20 @@ For instance, I accessed city name and temperature from the json data using json
 var decodedData = jsonDecode(data);
 String city = decodedData['name'];
 ```
+---
+---
+
+# spinKit
+
+The [spinKit](https://pub.dev/packages/flutter_spinkit) flutter package designs an animated loading indicator for my
+loading screen. To use this package in your code, you just have to add
+the SpinKit widget in the build method.
+
+```dart
+body: Center(
+          child: SpinKitPumpingHeart(
+            color: Colors.white,
+            size: 100.0,
+          ),
+        )
+```
