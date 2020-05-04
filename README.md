@@ -250,3 +250,31 @@ body: Center(
           ),
         )
 ```
+---
+---
+
+# Screen Navigation
+
+The Navigator widget manages route objects with the use of `Navigator.push` and `Navigator.pop`.  
+In Flutter apps, screens are added in layers on top of each other using `Navigator.push`.
+To return to a previous screen, the method `Navigator.pop` is used.
+
+## Navigator.push
+
+`Navigator.push` takes in a context and navigates to a new route.
+
+```dart
+Navigator.push(context, MaterialPageRoute(builder: (context){
+      return LocationScreen(locationWeather: weatherData,);
+    }));
+```
+
+## Navigator.pop
+
+`Navigator.pop` returns to the previous route by popping the current screen.
+
+```dart
+onPressed: () {
+    Navigator.pop(context);
+  },
+```
